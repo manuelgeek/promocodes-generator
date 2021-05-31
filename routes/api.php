@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PromoCodeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::fallback(function(){
+    return response()->json(['message' => 'Not Found!'], 404);
+});
+
+Route::group(['prefix' => 'v1'], function () {
+    Route::group(['prefix' => 'promocodes'], function () {
+        Route::put('/update/status/{promoCode:code}', [PromoCodeController::class, 'updatePromoCodeStatus']);
+    });
 });

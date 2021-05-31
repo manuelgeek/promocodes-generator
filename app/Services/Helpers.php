@@ -4,7 +4,7 @@
 namespace App\Services;
 
 
-use App\Models\PromotionCodes;
+use App\Models\PromotionCode;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
@@ -26,7 +26,7 @@ class Helpers
     public function generateCode(): string
     {
         $code = Str::random(5);
-        if (PromotionCodes::where('code', $code)->count() > 0) $this->generateCode();
+        if (PromotionCode::where('code', $code)->count() > 0) $this->generateCode();
         return strtoupper($code);
     }
 

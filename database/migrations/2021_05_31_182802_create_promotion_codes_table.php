@@ -17,7 +17,7 @@ class CreatePromotionCodesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('promotion_id');
             $table->string('code')->unique();
-            $table->string('status')->default(\App\Models\PromotionCodes::ACTIVE);
+            $table->string('status')->default(\App\Models\PromotionCode::ACTIVE);
             $table->timestamps();
         });
     }

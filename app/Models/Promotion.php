@@ -17,6 +17,6 @@ class Promotion extends Model
 
     public function promotionCodes(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(PromotionCodes::class);
+        return $this->hasMany(PromotionCode::class);
     }
 }
