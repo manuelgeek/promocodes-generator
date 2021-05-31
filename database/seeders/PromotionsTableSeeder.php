@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Promotion;
 use App\Services\Helpers;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class PromotionsTableSeeder extends Seeder
@@ -23,8 +24,8 @@ class PromotionsTableSeeder extends Seeder
             'amount' => 500,
             'event_location' => 'iHub, Senteu Plaza',
             'latitude' => -1.2892173,
-            'longitude' => '36.7809874',
-            'expiry_date' => '31-06-2021',
+            'longitude' => 36.7809874,
+            'expiry_date' => Carbon::parse('2021-06-31 12:00:00'),
             'status' => Promotion::ACTIVE
         ]);
 

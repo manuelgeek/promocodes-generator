@@ -27,7 +27,7 @@ class Helpers
     {
         $code = Str::random(5);
         if (PromotionCodes::where('code', $code)->count() > 0) $this->generateCode();
-        return ucwords($code);
+        return strtoupper($code);
     }
 
 }

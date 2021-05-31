@@ -21,9 +21,9 @@ class CreatePromotionsTable extends Migration
             $table->integer('no_of_tickets');
             $table->integer('amount');
             $table->string('event_location');
-            $table->double('longitude');
             $table->double('latitude');
-            $table->date('expiry_date');
+            $table->double('longitude');
+            $table->dateTime('expiry_date');
             $table->string('status')->default(\App\Models\Promotion::ACTIVE);
             $table->timestamps();
         });
