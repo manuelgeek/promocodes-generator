@@ -16,6 +16,7 @@ class CreatePromotionsTable extends Migration
         Schema::create('promotions', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->string('event_name');
             $table->text('description')->nullable();
             $table->integer('no_of_tickets');
@@ -23,6 +24,7 @@ class CreatePromotionsTable extends Migration
             $table->string('event_location');
             $table->double('latitude');
             $table->double('longitude');
+            $table->double('radius');
             $table->dateTime('expiry_date');
             $table->string('status')->default(\App\Models\Promotion::ACTIVE);
             $table->timestamps();
