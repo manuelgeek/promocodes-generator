@@ -22,7 +22,10 @@ Route::fallback(function(){
 Route::group(['prefix' => 'v1'], function () {
     Route::group(['prefix' => 'promotion'], function () {
         Route::post('/create', [PromoCodeController::class, 'createPromotion']);
-        Route::put('/update/promocode/{promoCode:code}/status', [PromoCodeController::class, 'updatePromoCodeStatus']);
+        Route::put('/update/{promotion:slug}', [PromoCodeController::class, 'updatePromotion']);
+        Route::put('/update/promocode/{code}/status', [PromoCodeController::class, 'updatePromoCodeStatus']);
         Route::put('/update/{promotion:slug}/status', [PromoCodeController::class, 'updateAllPromoCodeStatuses']);
+        Route::get('/{promotion:slug}/promocodes', [PromoCodeController::class, 'getPromoCodes']);
+        Route::post('promocode/{code}/use', [PromoCodeController::class, 'usePromoCode']);
     });
 });

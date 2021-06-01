@@ -28,8 +28,8 @@ class PromotionsTableSeeder extends Seeder
             'event_location' => 'iHub, Senteu Plaza',
             'latitude' => -1.2892173,
             'longitude' => 36.7809874,
-            'radius' => 25,
-            'expiry_date' => Carbon::parse('2021-06-31 12:00:00'),
+            'radius' => 5,
+            'expiry_date' => Carbon::parse('2021-06-30 12:00:00'),
             'status' => Promotion::ACTIVE
         ]);
 
