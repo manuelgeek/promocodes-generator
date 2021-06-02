@@ -34,7 +34,7 @@ class PromoCodeTransformer extends TransformerAbstract
     {
         return [
             'id' => $code->id,
-            'code' => $code->id,
+            'code' => $code->code,
             'status' => $code->status,
             'title' => $code->promotion->title,
             'event_name' => $code->promotion->event_name,
