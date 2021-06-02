@@ -67,8 +67,9 @@ class PromoCodeController extends Controller
     {
         $codes = PromotionCode::query();
         if($request->has('active') && $request->active !== null) {
-            $codes->whereHas('promotion', function ($q) {
-                $q->whereStatus(PromotionCode::ACTIVE)
+            $codes->whereStatus(PromotionCode::ACTIVE)
+                ->whereHas('promotion', function ($q) {
+                $q->whereStatus(Promotion::ACTIVE)
                     ->whereDate('expiry_date', '>=', now());
             });
         }
